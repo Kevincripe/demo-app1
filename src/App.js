@@ -1,10 +1,18 @@
 import './App.css';
+import React, { useState } from 'react';
+import Button from './components/Button';
+import Title from './components/Title';
 
-export const Title = ({title, visible}) => {
 
-  return (
-    <div className="App">
-		<h2>{visible ? title: null}</h2>
-    </div>
-  );
-}
+const Homepage = () => {
+	const [visible, setVisible] = useState(true)
+	return (
+	  <div className='App'>
+		<br/>
+		<Button setVisible={setVisible}/>
+		<Title visible={visible} title={'This is a Recoil app'}/>
+	  </div>
+	)
+  }
+
+export default Homepage;
