@@ -1,5 +1,6 @@
 import './App.css';
 import React, {useState} from 'react';
+import { TodoMain } from './components/TodoMain';
 
 
 const App = () => {
@@ -11,6 +12,7 @@ const App = () => {
 		<header>
 			<h1>{ visible ? null : 'FCC ToDo' }</h1>
 		</header>
+		<TodoMain />
 	  </>
 	);
   };
