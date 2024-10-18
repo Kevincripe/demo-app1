@@ -1,15 +1,15 @@
 import './App.css';
-import React, { useState } from 'react';
-import Button from './components/Button';
-import Title from './components/Title';
+import React, {useState} from 'react';
 
 
 const App = () => {
 	
+	const [visible, setVisible] = useState(false)
+
 	return (
 	  <>
 		<header>
-			<h1>FCC ToDo</h1>
+			<h1>{ visible ? null : 'FCC ToDo' }</h1>
 		</header>
 	  </>
 	);
