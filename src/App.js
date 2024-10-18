@@ -4,15 +4,15 @@ import Button from './components/Button';
 import Title from './components/Title';
 
 
-const Homepage = () => {
-	const [visible, setVisible] = useState(true)
+const App = () => {
+	
 	return (
-	  <div className='App'>
-		<br/>
-		<Button setVisible={setVisible}/>
-		<Title visible={visible} title={'This is a Recoil app'}/>
-	  </div>
-	)
-  }
+	  <>
+		<header>
+			<h1>FCC ToDo</h1>
+		</header>
+	  </>
+	);
+  };
 
-export default Homepage;
+export default App;
