@@ -12,11 +12,24 @@ export const TodoItemCreator = () => {
         setInputValue(event.target.value)
     }
 
+    const addTodoItem = () => {
+        if (inputValue) {
+            setTodoList((prevTodoList) => [
+                ...prevTodoList,
+                {
+                    text:inputValue,
+                    isComplete:false,
+                    id: Math.random() * 10000 + 1
+                }
+            ])
+        }
+    }
+
     return (
         <div>
             <input type="text" value={inputValue} onChange={onChange}/>
             {console.log(inputValue)}
-            <button >Add Task</button>
+            <button onClick={addTodoItem}>Add Task</button>
         </div>
     )
 }
