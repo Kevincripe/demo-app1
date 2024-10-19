@@ -22,6 +22,7 @@ export const TodoItemCreator = () => {
                     id: Math.random() * 10000 + 1
                 }
             ])
+            setInputValue('')
         }
     }
 
