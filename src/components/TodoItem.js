@@ -8,18 +8,22 @@ export const TodoItem = ({ item }) => {
     const index = todoList.findIndex((listItem) => listItem === item)
     
     const toggleItemCompletion = () => {
-        setTodoList({
+        setTodoList([...todoList.slice(0, index), 
+        {
             ...item, 
-            isComplete: item.isComplete
-        })
+            isComplete: !item.isComplete
+        }, 
+        ...todoList.slice(index + 1)])
     }
 
     return (
-        <div>
+        <div className="container">
             <input
                 type="text"
-                value={item.text}
+                value={item.text + ": " + item.isComplete}
             />
+            <input type="checkbox" checked={item.isComplete}
+            onChange={toggleItemCompletion} />
         </div>
     )
 }
