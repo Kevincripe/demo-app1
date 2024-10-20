@@ -7,6 +7,12 @@ export const TodoItem = ({ item }) => {
     const [todoList, setTodoList] = useRecoilState(todoListAtom)
     const index = todoList.findIndex((listItem) => listItem === item)
     
+    const toggleItemCompletion = () => {
+        setTodoList({
+            ...item, 
+            isComplete: item.isComplete
+        })
+    }
 
     return (
         <div>
