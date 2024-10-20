@@ -29,7 +29,6 @@ export const TodoItemCreator = () => {
     return (
         <div>
             <input type="text" value={inputValue} onChange={onChange}/>
-            {console.log(inputValue)}
             <button onClick={addTodoItem}>Add Task</button>
         </div>
     )
