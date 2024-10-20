@@ -19,8 +19,9 @@ export const TodoItem = ({ item }) => {
     return (
         <div className="container">
             <input
+            className={item.isComplete.toString() === 'true' ? 'done-task' : '' }
                 type="text"
-                value={item.text + ": " + item.isComplete}
+                value={item.text}
             />
             <input type="checkbox" checked={item.isComplete}
             onChange={toggleItemCompletion} />
