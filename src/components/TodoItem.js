@@ -24,6 +24,14 @@ export const TodoItem = ({ item }) => {
         ...todoList.slice(index + 1)])
     }
 
+    const deleteItem = () => {
+        setTodoList([
+            ...todoList.slice(0, index),
+            ...todoList.slice(index + 1)
+        ])
+    }
+
+    
     return (
         <div className="container">
             <input
@@ -34,6 +42,7 @@ export const TodoItem = ({ item }) => {
             />
             <input type="checkbox" checked={item.isComplete}
                 onChange={toggleItemCompletion} />
+            <button className="del-btn" onClick={deleteItem}>X</button>
         </div>
     )
 }
