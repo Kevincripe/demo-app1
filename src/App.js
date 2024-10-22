@@ -7,7 +7,7 @@ const App = () => {
 	return (
 	  <>
 		<header className='header'>
-			<h1>FCC ToDo</h1>
+			<h1>ToDo</h1>
 		</header>
 		<TodoMain />
 	  </>

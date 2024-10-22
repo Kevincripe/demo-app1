@@ -27,9 +27,9 @@ export const TodoItemCreator = () => {
     }
 
     return (
-        <div>
+        <div className="todo-creator">
             <input type="text" value={inputValue} onChange={onChange}/>
-            <button onClick={addTodoItem}>Add Task</button>
+            <button onClick={addTodoItem} className="add-btn">Add Task</button>
         </div>
     )
 }
