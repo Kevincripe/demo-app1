@@ -8,30 +8,36 @@ export const TodoItem = ({ item }) => {
     const index = todoList.findIndex((listItem) => listItem === item)
 
     const editItemText = (event) => {
-        setTodoList([...todoList.slice(0, index),
-        { ...item, text: event.target.value },
-        ...todoList.slice(index + 1),
-        ]);
+
+        const newValue = { 
+            ...item, 
+            text: event.target.value }
+
+        const newList = replaceItemAtIndex(todoList, index, newValue)
+
+        setTodoList(newList);
     }
 
     const toggleItemCompletion = () => {
 
-        setTodoList([...todoList.slice(0, index),
-        {
+        const newValue = {
             ...item,
             isComplete: !item.isComplete
-        },
-        ...todoList.slice(index + 1)])
+        }
+
+        const newList = replaceItemAtIndex(todoList, index, newValue)
+
+        setTodoList(newList)
     }
 
     const deleteItem = () => {
-        setTodoList([
-            ...todoList.slice(0, index),
-            ...todoList.slice(index + 1)
-        ])
+
+        const newList = removeItemAtIndex(todoList, index)
+
+        setTodoList(newList)
     }
 
-    
+
     return (
         <div className="container">
             <input
@@ -45,4 +51,12 @@ export const TodoItem = ({ item }) => {
             <button className="del-btn" onClick={deleteItem}>X</button>
         </div>
     )
+}
+
+const replaceItemAtIndex = (arr, index, newValue) => {
+    return [...arr.slice(0, index), newValue, ...arr.slice(index + 1)]
+}
+
+const removeItemAtIndex = (arr, index) => {
+    return [...arr.slice(0, index), ...arr.slice(index + 1)]
 }
