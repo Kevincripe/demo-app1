@@ -9,9 +9,10 @@ export const TodoItem = ({ item }) => {
 
     const editItemText = (event) => {
 
-        const newValue = { 
-            ...item, 
-            text: event.target.value }
+        const newValue = {
+            ...item,
+            text: event.target.value
+        }
 
         const newList = replaceItemAtIndex(todoList, index, newValue)
 
