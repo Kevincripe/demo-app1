@@ -113,3 +113,23 @@ body {
     display: flex;
     flex-direction: column;
   }
+
+  .filter-dropdown {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .filter-dropdown select {
+    width: 100px;
+    height: 20px;
+    margin-right: 10px;
+    background-color: green;
+    color: white;
+  }
+
+  .filter-text {
+    color: white;
+    padding: 2px;
+    margin-right: 4px;
+  }
