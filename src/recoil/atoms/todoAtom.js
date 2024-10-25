@@ -1,4 +1,7 @@
 import {atom} from 'recoil';
+import { recoilPersist } from 'recoil-persist';
+
+const { persistAtom } = recoilPersist();
 
 export const todoListAtom = atom({
     
@@ -7,6 +10,6 @@ export const todoListAtom = atom({
         text: 'drink coffee',
         id: 13579,
         isComplete: false
-    }]
-
+    }],
+    effects_UNSTABLE: [persistAtom]
 })
