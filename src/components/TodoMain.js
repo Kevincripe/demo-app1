@@ -2,14 +2,14 @@ import { todoListAtom } from '../recoil/atoms/todoAtom';
 import { useRecoilValue } from 'recoil';
 import { TodoItemCreator } from './TodoItemCreator';
 import {TodoItem} from './TodoItem';
-import FilterDropdown from './FilterDropdown';
+import FilterDropdown from './FilterDropDown';
 import './todo.css'
-import { completedTodoListSelector } from '../recoil/selectors/completedTodoSelector';
+import { filteredTodoListSelector } from '../recoil/selectors/filteredTodoSelector';
 
 export const TodoMain = () => {
 
     const todoList = useRecoilValue(todoListAtom)
-    const completedTodoList = useRecoilValue(completedTodoListSelector)
+    const filteredTodoList = useRecoilValue(filteredTodoListSelector)
 
     return (
         <div className='parent-container'>
@@ -18,8 +18,8 @@ export const TodoMain = () => {
             <FilterDropdown />
                 {todoList.length > 0 && (
                     <div style={{ color: 'white' }} className='todos-list'>
-                        {todoList.map((todoItem) => (
-                            <TodoItem key={todoItem.id} item={todoItem} />
+                        {filteredTodoList.map((filterItem) => (
+                            <TodoItem key={filterItem.id} item={filterItem} />
                             ))}
                     </div>
                 )}
